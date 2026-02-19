@@ -16,4 +16,10 @@ let weathercon = document.getElementById("weathercon");
     console.log(weekday[currentTime.getDay()]);
   }
 
-  const
+  const getCurrentTime = () => {
+    var currentTime = new Date();
+    var month = currentTime.getMonth() + 1;
+    var day = currentTime.getDate();
+    var hours = currentTime.getHours();
+  
+  }
