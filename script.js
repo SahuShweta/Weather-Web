@@ -17,8 +17,28 @@ let weathercon = document.getElementById("weathercon");
   }
 
   const getCurrentTime = () => {
-    var currentTime = new Date();
-    var month = currentTime.getMonth() + 1;
+    var months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+
+    var now = new Date()
+    var month = months[now.getMonth()+1];
+    var day = now.getDate();
+
+    var hours = now.getHours();
+    var mins = now.getMinutes();
+    currentTime.getMonth() + 1;
     var day = currentTime.getDate();
     var hours = currentTime.getHours();
   
