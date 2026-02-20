@@ -1,4 +1,4 @@
-const curDate = document.getAnimations("date");
+const curDate = document.getElementById("date");
 let weathercon = document.getElementById("weathercon");
 
   const tempStatus = "Clouds";
@@ -13,8 +13,9 @@ let weathercon = document.getElementById("weathercon");
     weekday[6] = "Saturday";
     
     let currentTime = new Date();
-    console.log(weekday[currentTime.getDay()]);
-  }
+    let day = weekday[currentTime.getDay()];
+    return day;
+  };
 
   const getCurrentTime = () => {
     var months = [
@@ -34,12 +35,21 @@ let weathercon = document.getElementById("weathercon");
 
     var now = new Date()
     var month = months[now.getMonth()+1];
-    var day = now.getDate();
+    var date = now.getDate();
 
-    var hours = now.getHours();
-    var mins = now.getMinutes();
-    currentTime.getMonth() + 1;
-    var day = currentTime.getDate();
-    var hours = currentTime.getHours();
-  
-  }
+    let hours = now.getHours();
+    let mins = now.getMinutes();
+
+    let perios = "AM";
+
+    if(hours > 11){
+      perios = "PM";
+      if(hours > 12) hours -= 12;
+    }
+    if (mins <10) {
+      mins = "0" + mins;
+    }
+    return `${month} ${date} ${hours}:${mins} ${perios}`;
+  };
+
+  curDate.innerHTML = getCurrentTime() + "|" + getCurrentTime();
